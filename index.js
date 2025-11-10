@@ -11,6 +11,8 @@ const client = new Client({
 
 const TOKEN = process.env.DISCORD_TOKEN;
 const N8N_WEBHOOK = process.env.N8N_WEBHOOK;
+console.log("DEBUG TOKEN:", TOKEN ? `Länge=${TOKEN.length}` : "NICHT VORHANDEN");
+
 
 client.on("messageCreate", async (msg) => {
   if (!msg.content.startsWith("!add") && !msg.content.startsWith("!remove")) return;
